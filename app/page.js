@@ -10,14 +10,14 @@ const treatments = [
   {
     name: "Hydra Facial",
     price: "Mulai Rp 70.000",
-    desc: "Bersihin, lembapin, dan angkat sel kulit mati — hasil fresh seketika.",
+    desc: "Membersihkan secara mendalam dan mengunci kelembapan. Kulit langsung terasa segar dan berseri di hari yang sama.",
     accent: "coral",
     wa: wa("Halo Quinzha Beauty, saya mau Hydra Facial"),
   },
   {
     name: "Skin Booster Korea",
     price: "Mulai Rp 300.000",
-    desc: "Glow dari dalam: kulit lebih lembap, kenyal, dan cerah.",
+    desc: "Nutrisi ekstra dari dalam untuk hasil kulit yang lebih lembap, kenyal, dan glowing natural.",
     accent: "blue",
     wa: wa("Halo Quinzha Beauty, saya tertarik Skin Booster Korea"),
   },
@@ -41,7 +41,7 @@ const values = [
   {
     accent: "coral",
     title: "Ditangani dokter",
-    desc: "Setiap treatment dicek & diawasi dokter — bukan asal kerja.",
+    desc: "Perawatan estetika berstandar medis di ruang yang nyaman. Dapatkan versi terbaik dirimu dengan harga jujur dari awal..",
     icon: (
       <path d="M12 3a4 4 0 0 1 4 4v2a4 4 0 1 1-8 0V7a4 4 0 0 1 4-4Zm-7 18a7 7 0 0 1 14 0" />
     ),
@@ -49,13 +49,13 @@ const values = [
   {
     accent: "blue",
     title: "Harga transparan",
-    desc: "Harga jelas dari awal, nggak ada angka rahasia di DM.",
+    desc: "Pilih perawatan tanpa rasa khawatir. Harga jujur sejak awal, tanpa biaya yang disembunyikan.",
     icon: <path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H7m0 0h8" />,
   },
   {
     accent: "teal",
     title: "Ruang baru nyaman",
-    desc: "Tempat baru yang lebih estetik & bersih, buka sampai malam.",
+    desc: "Desain interior yang estetik dan cozy. Nikmati waktu relaksasi maksimal di setiap sesi perawatan Anda.",
     icon: <path d="M4 11 12 4l8 7M6 10v9h12v-9M10 19v-5h4v5" />,
   },
 ];
@@ -80,8 +80,8 @@ const testimonials = [
 ];
 
 const steps = [
-  ["1", "Chat WhatsApp", "Ceritakan keluhan & keinginanmu. Kami bantu pilihkan.", "coral"],
-  ["2", "Pilih jadwal", "Tentukan hari & jam yang pas — kami buka sampai malam.", "blue"],
+  ["1", "Chat WhatsApp", "Ceritakan kondisi kulitmu, kami bantu rekomendasikan perawatan yang paling tepat.", "coral"],
+  ["2", "Pilih jadwal", "Tentukan waktu luangmu. Kami fleksibel dan buka hingga malam.", "blue"],
   ["3", "Konsultasi dokter", "Datang, kulitmu dicek dulu sebelum treatment.", "gold"],
   ["4", "Treatment", "Dikerjakan & diawasi dokter, di ruang yang nyaman.", "teal"],
 ];
@@ -184,18 +184,17 @@ export default function Page() {
               Klinik Kecantikan · Batulicin
             </p>
             <h1 data-reveal className="text-6xl font-semibold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
-              Cantik. Aman.
+              Cantik, Aman,
               <br />
-              <span className="italic text-coral-500">Jujur.</span>
+              <span className="italic text-coral-500">Transparan.</span>
             </h1>
             <p data-reveal className="mx-auto mt-7 max-w-xl text-lg text-ink-700 sm:text-xl">
-              Treatment terkini, harga yang jujur, dan ruang klinik baru yang nyaman.
-              Glow-up nggak harus bikin dompet deg-degan.
+              Perawatan estetika berstandar medis di ruang yang nyaman. Dapatkan versi terbaik dirimu dengan harga jujur dari awal.
             </p>
             <div data-reveal className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <a href={waMain} target="_blank" rel="noopener"
                 className="inline-flex rounded-full bg-coral-500 px-8 py-4 font-semibold text-white shadow-lg shadow-coral-500/25 transition hover:bg-coral-600">
-                Booking via WhatsApp
+                Konsultasi via WhatsApp
               </a>
               <a href="#perawatan" className="inline-flex items-center gap-2 px-2 py-3 font-semibold text-ink-900 underline decoration-coral-400 decoration-2 underline-offset-4">
                 Lihat harga →
@@ -264,11 +263,10 @@ export default function Page() {
                 Perawatan &amp; Harga
               </p>
               <h2 data-reveal className="text-5xl font-semibold sm:text-6xl">
-                Harga kami terbuka dari awal.
+                Transparansi adalah Komitmen Kami.
               </h2>
               <p data-reveal className="mx-auto mt-5 max-w-xl text-lg text-ink-700">
-                Nggak ada harga rahasia di DM. Ini yang paling sering diambil — klik buat tanya
-                atau langsung booking di WhatsApp.
+                Temukan perawatan yang sesuai dengan kebutuhan kulitmu. Silakan klik untuk detail konsultasi.
               </p>
             </div>
 
@@ -377,7 +375,7 @@ export default function Page() {
               <p data-reveal className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-coral-500">
                 Cara booking
               </p>
-              <h2 data-reveal className="text-5xl font-semibold sm:text-6xl">Gampang, tinggal chat.</h2>
+              <h2 data-reveal className="text-5xl font-semibold sm:text-6xl">Reservasi Mudah dalam 4 Langkah.</h2>
             </div>
             <ol className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map(([no, h, d, accent]) => (
