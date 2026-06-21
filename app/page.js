@@ -434,7 +434,7 @@ export default function Page() {
               Siap glow-up?
             </p>
             <h2 data-reveal className="mx-auto max-w-2xl text-5xl font-semibold text-cream-50 sm:text-7xl">
-              Booking-nya gampang, tinggal chat.
+              Satu langkah lebih dekat menuju kulit sehat. Mulai konsultasi Anda sekarang.
             </h2>
             <a data-reveal href={waMain} target="_blank" rel="noopener"
               className="mt-9 inline-flex rounded-full bg-coral-500 px-9 py-4 font-semibold text-white transition hover:bg-coral-400">
@@ -452,8 +452,7 @@ export default function Page() {
                   Quinzha<span className="text-coral-400"> 88</span>
                 </span>
                 <p className="mt-3 max-w-xs text-sm">
-                  Klinik kecantikan di Batulicin — treatment terkini, harga jujur,
-                  ruang baru yang nyaman.
+                  Klinik kecantikan di Batulicin — Cantik Natural, Aman dan Transparan.
                 </p>
               </div>
               <div>
@@ -468,8 +467,8 @@ export default function Page() {
               <div>
                 <p className="font-display text-sm font-semibold uppercase tracking-wider text-cream-50">Kontak</p>
                 <ul className="mt-4 space-y-2 text-sm">
-                  <li><a href={waMain} target="_blank" rel="noopener" className="hover:text-cream-50">WhatsApp 0852-2208-8878</a></li>
-                  <li><a href="https://instagram.com/quinzhabeautyaesthetic88" target="_blank" rel="noopener" className="text-coral-300 hover:text-cream-50">@quinzhabeautyaesthetic88</a></li>
+                  <li><a href={waMain} target="_blank" rel="noopener" className="hover:text-cream-50">WhatsApp</a></li>
+                  <li><a href="https://instagram.com/quinzhabeautyaesthetic88" target="_blank" rel="noopener" className="text-coral-300 hover:text-cream-50">Instagram</a></li>
                 </ul>
               </div>
             </div>
