@@ -7,9 +7,9 @@ const WA =
   encodeURIComponent("Halo Quinzha Beauty, saya mau konsultasi");
 
 const links = [
-  ["#perawatan", "Perawatan & Harga"],
-  ["#ruang", "Ruang Baru"],
+  ["#perawatan", "Perawatan"],
   ["#bukti", "Bukti"],
+  ["#testimoni", "Testimoni"],
   ["#kunjungi", "Kunjungi"],
 ];
 
@@ -27,12 +27,12 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        stuck ? "border-b border-peach-200 bg-cream-50/85 backdrop-blur" : ""
+        stuck ? "border-b border-cream-200 bg-cream-100/85 backdrop-blur" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#beranda" className="flex items-center gap-2" aria-label="Quinzha Beauty — beranda">
-          <span className="grid h-9 w-9 place-items-center rounded-2xl bg-coral-500 font-display text-base font-bold text-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+        <a href="#beranda" className="flex items-center gap-2.5" aria-label="Quinzha Beauty — beranda">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-ink-900 font-display text-base font-bold text-cream-50">
             Q
           </span>
           <span className="font-display text-lg font-bold tracking-tight text-ink-900">
@@ -59,13 +59,13 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className={`${
               open ? "flex" : "hidden"
-            } absolute inset-x-0 top-full flex-col gap-1 border-b border-peach-200 bg-cream-50/97 px-5 pb-4 backdrop-blur sm:static sm:flex sm:flex-row sm:items-center sm:gap-7 sm:border-0 sm:bg-transparent sm:p-0`}
+            } absolute inset-x-0 top-full flex-col gap-1 border-b border-cream-200 bg-cream-100/97 px-5 pb-4 backdrop-blur sm:static sm:flex sm:flex-row sm:items-center sm:gap-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none`}
           >
             {links.map(([href, label]) => (
               <li key={href}>
                 <a
                   href={href}
-                  className="block py-2 text-sm font-medium text-ink-700 transition-colors hover:text-coral-500"
+                  className="block py-2 text-sm font-medium text-ink-700 transition-colors hover:text-ink-900"
                 >
                   {label}
                 </a>
@@ -76,9 +76,9 @@ export default function Header() {
                 href={WA}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex rounded-full bg-coral-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-coral-600"
+                className="inline-flex rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-coral-600"
               >
-                Konsultasi
+                Booking
               </a>
             </li>
           </ul>

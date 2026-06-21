@@ -2,44 +2,63 @@
 
 /* =========================================================
    Quinzha Beauty 88 — Batulicin · design tokens (Tailwind v4)
-   Art direction: fresh, friendly, honest — warm white + coral.
+   Art direction: warm cream + multi-color accents, oversized
+   grotesque type, modular sections.  Palette from reference.
    ========================================================= */
 @theme {
-  --color-cream-50: #fffaf6;
-  --color-cream-100: #fff3eb;
-  --color-peach-100: #ffe7db;
-  --color-peach-200: #ffd8c6;
-  --color-coral-600: #e8542f;
-  --color-coral-500: #f4663a;
-  --color-coral-400: #ff8662;
-  --color-mint-500: #16b89a;
-  --color-ink-900: #2a201c;
-  --color-ink-700: #574b44;
-  --color-ink-500: #8c7f77;
+  /* surfaces */
+  --color-cream-50: #fcf7ef;
+  --color-cream-100: #f8f0e3;
+  --color-cream-200: #ece4d7;
 
-  --font-display: var(--font-baloo), "Segoe UI", system-ui, sans-serif;
-  --font-body: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  /* ink */
+  --color-ink-900: #180102;
+  --color-ink-700: #574b42;
+  --color-ink-500: #7a7164;
+
+  /* accents */
+  --color-coral-500: #f16b46;
+  --color-coral-600: #d9542f;
+  --color-blue-500: #63a4bc;
+  --color-gold-500: #dbb154;
+  --color-teal-500: #3dac91;
+  --color-pink-500: #e0a5cf;
+  --color-terracotta-500: #a7625a;
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-section[id] { scroll-margin-top: 84px; }
+/* Base element styles live in @layer base so color/spacing utilities
+   (e.g. text-white) still win over them. */
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  section[id] { scroll-margin-top: 84px; }
 
-body {
-  margin: 0;
-  background: var(--color-cream-50);
-  color: var(--color-ink-700);
-  font-family: var(--font-body);
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  body {
+    margin: 0;
+    background: var(--color-cream-100);
+    color: var(--color-ink-700);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-900);
+    margin: 0;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  :focus-visible { outline: 3px solid var(--color-coral-500); outline-offset: 3px; border-radius: 6px; }
 }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; color: var(--color-ink-900); margin: 0; }
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-
-:focus-visible { outline: 3px solid var(--color-coral-500); outline-offset: 3px; border-radius: 6px; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -47,7 +66,7 @@ img { display: block; max-width: 100%; }
 }
 .skip-link {
   position: absolute; left: 1rem; top: -3rem; z-index: 200;
-  background: var(--color-coral-500); color: #fff;
+  background: var(--color-ink-900); color: var(--color-cream-50);
   padding: .6rem 1rem; border-radius: 10px; font-weight: 700; transition: top .2s ease;
 }
 .skip-link:focus { top: 1rem; }
@@ -59,15 +78,27 @@ img { display: block; max-width: 100%; }
   .js [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
 
+/* marquee trust strip */
+.marquee { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.marquee__track { display: flex; flex-shrink: 0; gap: 3.5rem; align-items: center; padding-right: 3.5rem; animation: marquee 28s linear infinite; }
+.marquee--slow .marquee__track { gap: 1.25rem; padding-right: 1.25rem; animation-duration: 48s; }
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } .marquee { overflow-x: auto; } }
+
+/* soft teal glow used on the before/after frame */
+.glow-cyan { box-shadow: 0 30px 70px -34px rgba(61, 172, 145, .5); }
+
 /* before / after */
-.ba__frame { position: relative; aspect-ratio: 16/10; border-radius: 20px; overflow: hidden; user-select: none; touch-action: none; background: var(--color-peach-100); box-shadow: 0 26px 60px -30px rgba(244,102,58,.45); }
+.ba__frame { position: relative; aspect-ratio: 16/10; border-radius: 24px; overflow: hidden; user-select: none; touch-action: none; background: var(--color-cream-200); }
 .ba__img { position: absolute; inset: 0; overflow: hidden; }
 .ba__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ba__img--after { z-index: 1; }
 .ba__img--before { z-index: 2; }
 .ba__handle { position: absolute; top: 0; height: 100%; width: 46px; transform: translateX(-50%); z-index: 3; border: none; background: transparent; cursor: ew-resize; display: grid; place-items: center; color: #fff; }
 .ba__handle::before { content: ""; position: absolute; left: 50%; top: 0; height: 100%; width: 3px; background: #fff; transform: translateX(-50%); }
-.ba__knob { position: relative; width: 44px; height: 44px; border-radius: 50%; background: var(--color-coral-500); display: grid; place-items: center; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+.ba__knob { position: relative; width: 44px; height: 44px; border-radius: 50%; background: var(--color-coral-500); display: grid; place-items: center; font-size: 1rem; font-weight: 700; box-shadow: 0 4px 16px rgba(24,1,2,.3); }
 .ba__tag { position: absolute; bottom: .8rem; padding: .35rem .85rem; border-radius: 999px; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
-.ba__tag--after { right: .8rem; background: rgba(255,255,255,.92); color: var(--color-ink-900); }
-.ba__tag--before { left: .8rem; background: var(--color-coral-500); color: #fff; }
+.ba__tag--after { right: .8rem; background: rgba(252,247,239,.92); color: var(--color-ink-900); }
+.ba__tag--before { left: .8rem; background: var(--color-ink-900); color: var(--color-cream-50); }
