@@ -80,8 +80,8 @@ const testimonials = [
   { name: "Dinda", loc: "Batulicin", quote: "Muka langsung fresh, tempatnya nyaman banget.", accent: "coral", poster: "/testimoni/dinda-poster.webp", video: "/testimoni/dinda.mp4" },
   { name: "Tika", loc: "Simpang Empat", quote: "Harganya jelas dari awal, dokternya ramah.", accent: "blue", poster: "/testimoni/tika-poster.webp", video: "/testimoni/tika.mp4" },
   { name: "Mega", loc: "Pagatan", quote: "Glow-up tanpa bikin dompet nangis. Recommended.", accent: "pink", poster: "/testimoni/mega-poster.webp", video: "/testimoni/mega.mp4" },
-  { name: "Reni", loc: "Batulicin", poster: "/dr-amalia.jpg", quote: "Skin booster-nya kelihatan hasilnya. Balik lagi!", accent: "teal" },
-  { name: "Sari", loc: "Batulicin", poster: "/before.jpg", quote: "Pertama kali ke klinik, dijelasin pelan-pelan.", accent: "gold" },
+  { name: "Reni", loc: "Batulicin", poster: "/dr-amalia.jpg", quote: "Skin booster-nya kelihatan hasilnya. Balik lagi!", accent: "teal", poster: "/testimoni/reni-poster.webp", video: "/testimoni/reni.mp4"},
+  { name: "Sari", loc: "Batulicin", poster: "/before.jpg", quote: "Pertama kali ke klinik, dijelasin pelan-pelan.", accent: "gold", poster: "/testimoni/sari-poster.webp", video: "/testimoni/sari.mp4" },
 ];
 
 const steps = [
