@@ -22,3 +22,6 @@
 
 # local tooling
 /.claude
+
+# raw (uncompressed) testimonial videos — only the encoded /public/testimoni files ship
+/raw-testimoni

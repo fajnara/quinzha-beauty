@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import BeforeAfter from "@/components/BeforeAfter";
 import ScrollReveal from "@/components/ScrollReveal";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 const NUM = "6285222088878";
 const wa = (t) => `https://wa.me/${NUM}?text=${encodeURIComponent(t)}`;
@@ -69,14 +70,18 @@ const trust = [
   "Konsultasi dulu",
 ];
 
-// Testimonial videos — posters use existing photos; drop /public/*.mp4 and set
-// `video` later to play real clips.
+// Testimonial cards. Poster-only for now (shows the image). To enable a real
+// video: run `bash scripts/encode-testimoni.sh`, then add to that entry:
+//   poster: "/testimoni/<slug>-poster.webp",
+//   video:  "/testimoni/<slug>.mp4",
+//   videoWebm: "/testimoni/<slug>.webm",
+// It autoplays muted + loops, and only loads/plays while on screen.
 const testimonials = [
-  { name: "Dinda", loc: "Batulicin", poster: "/after.jpg", quote: "Muka langsung fresh, tempatnya nyaman banget.", accent: "coral" },
-  { name: "Tika", loc: "Simpang Empat", poster: "/treatment.jpg", quote: "Harganya jelas dari awal, dokternya ramah.", accent: "blue" },
+  { name: "Dinda", loc: "Batulicin", quote: "Muka langsung fresh, tempatnya nyaman banget.", accent: "coral", poster: "/testimoni/dinda-poster.webp", video: "/testimoni/dinda.mp4" },
+  { name: "Tika", loc: "Simpang Empat", quote: "Harganya jelas dari awal, dokternya ramah.", accent: "blue", poster: "/testimoni/tika-poster.webp", video: "/testimoni/tika.mp4" },
+  { name: "Mega", loc: "Pagatan", quote: "Glow-up tanpa bikin dompet nangis. Recommended.", accent: "pink", poster: "/testimoni/mega-poster.webp", video: "/testimoni/mega.mp4" },
   { name: "Reni", loc: "Batulicin", poster: "/dr-amalia.jpg", quote: "Skin booster-nya kelihatan hasilnya. Balik lagi!", accent: "teal" },
   { name: "Sari", loc: "Batulicin", poster: "/before.jpg", quote: "Pertama kali ke klinik, dijelasin pelan-pelan.", accent: "gold" },
-  { name: "Mega", loc: "Pagatan", poster: "/after.jpg", quote: "Glow-up tanpa bikin dompet nangis. Recommended.", accent: "pink" },
 ];
 
 const steps = [
@@ -119,34 +124,6 @@ function Blob({ className }) {
         transform="translate(100 100)"
       />
     </svg>
-  );
-}
-
-// portrait testimonial "video" card (poster now, real <video src> later)
-function VideoCard({ t }) {
-  return (
-    <figure className="relative aspect-[9/16] w-[230px] shrink-0 overflow-hidden rounded-3xl bg-cream-200 sm:w-[260px]">
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        poster={t.poster}
-        src={t.video}
-        muted
-        loop
-        playsInline
-        autoPlay={!!t.video}
-        preload="none"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/10 to-transparent" />
-      <span className={`absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full ${accentBg[t.accent]} text-ink-900 shadow-lg`} aria-hidden="true">
-        ▶
-      </span>
-      <figcaption className="absolute inset-x-0 bottom-0 p-5 text-cream-50">
-        <p className="font-body text-sm leading-snug">{`“${t.quote}”`}</p>
-        <p className="mt-2 font-display text-base font-semibold">
-          {t.name} <span className="font-body text-xs font-normal text-cream-50/70">· {t.loc}</span>
-        </p>
-      </figcaption>
-    </figure>
   );
 }
 
@@ -354,18 +331,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div data-reveal className="marquee marquee--slow mt-14" aria-label="Testimoni video pasien">
-            {[0, 1].map((dup) => (
-              <div className="marquee__track" key={dup} aria-hidden={dup === 1}>
-                {testimonials.map((t, i) => (
-                  <VideoCard key={`${dup}-${t.name}-${i}`} t={t} />
-                ))}
-              </div>
-            ))}
-          </div>
-          <p className="mx-auto mt-8 max-w-3xl px-5 text-center text-xs text-ink-500">
-            Video contoh untuk pratinjau — akan diganti video pasien asli, atas izin.
-          </p>
+          <TestimonialCarousel items={testimonials} />
         </section>
 
         {/* ===== PROCESS ===== */}
