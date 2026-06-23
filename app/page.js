@@ -197,9 +197,6 @@ export default function Page() {
             <div className="overflow-hidden rounded-[2.5rem] border border-cream-200 shadow-2xl shadow-ink-900/10">
               <img src="/treatment.jpg" alt="Suasana perawatan di ruang baru Quinzha Beauty" className="h-[58vh] min-h-[340px] w-full object-cover sm:h-[640px]" />
             </div>
-            <span className="absolute -bottom-5 left-8 rounded-2xl bg-cream-50 px-6 py-3.5 text-sm font-bold text-ink-900 shadow-xl sm:left-14">
-              Ruang baru ✨ lebih nyaman
-            </span>
           </div>
         </section>
 
@@ -285,9 +282,9 @@ export default function Page() {
                 </a>
               ))}
             </div>
-            <p data-reveal className="mt-8 text-center text-sm text-ink-500">
+            {/* <p data-reveal className="mt-8 text-center text-sm text-ink-500">
               Harga final &amp; promo terbaru bisa ditanyakan langsung via WhatsApp.
-            </p>
+            </p> */}
           </div>
         </section>
 
