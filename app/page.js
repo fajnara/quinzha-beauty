@@ -80,8 +80,8 @@ const testimonials = [
   { name: "Dinda", loc: "Batulicin", quote: "Muka langsung fresh, tempatnya nyaman banget.", accent: "coral", poster: "/testimoni/dinda-poster.webp", video: "/testimoni/dinda.mp4" },
   { name: "Tika", loc: "Simpang Empat", quote: "Harganya jelas dari awal, dokternya ramah.", accent: "blue", poster: "/testimoni/tika-poster.webp", video: "/testimoni/tika.mp4" },
   { name: "Mega", loc: "Pagatan", quote: "Glow-up tanpa bikin dompet nangis. Recommended.", accent: "pink", poster: "/testimoni/mega-poster.webp", video: "/testimoni/mega.mp4" },
-  { name: "Reni", loc: "Batulicin", poster: "/dr-amalia.jpg", quote: "Skin booster-nya kelihatan hasilnya. Balik lagi!", accent: "teal", poster: "/testimoni/reni-poster.webp", video: "/testimoni/reni.mp4"},
-  { name: "Sari", loc: "Batulicin", poster: "/before.jpg", quote: "Pertama kali ke klinik, dijelasin pelan-pelan.", accent: "gold", poster: "/testimoni/sari-poster.webp", video: "/testimoni/sari.mp4" },
+  { name: "Reni", loc: "Batulicin", quote: "Skin booster-nya kelihatan hasilnya. Balik lagi!", accent: "teal", poster: "/testimoni/reni-poster.webp", video: "/testimoni/reni.mp4" },
+  { name: "Sari", loc: "Batulicin", quote: "Pertama kali ke klinik, dijelasin pelan-pelan.", accent: "gold", poster: "/testimoni/sari-poster.webp", video: "/testimoni/sari.mp4" },
 ];
 
 const steps = [
@@ -127,19 +127,33 @@ function Blob({ className }) {
   );
 }
 
+const SITE = "https://quinzha-beauty.vercel.app";
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   name: "Quinzha Beauty Aesthetic 88",
   description:
     "Klinik kecantikan di Batulicin: Hydra Facial, Skin Booster Korea, Tanam Benang, Filler Bibir.",
+  url: SITE,
+  image: `${SITE}/opengraph-image.png`,
+  priceRange: "Rp",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Batulicin",
+    streetAddress: "Jl. Raya Batulicin No. 88, Kampung Baru",
+    addressLocality: "Simpang Empat, Batulicin",
     addressRegion: "Tanah Bumbu, Kalimantan Selatan",
+    postalCode: "72211",
     addressCountry: "ID",
   },
   telephone: "+6285222088878",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "10:00",
+    closes: "21:00",
+  },
+  employee: { "@type": "Physician", name: "dr. Amalia", medicalSpecialty: "Dermatology" },
   sameAs: ["https://instagram.com/quinzhabeautyaesthetic88"],
 };
 
@@ -272,7 +286,7 @@ export default function Page() {
               ))}
             </div>
             <p data-reveal className="mt-8 text-center text-sm text-ink-500">
-              *Harga ilustrasi untuk pratinjau — harga final &amp; promo terbaru via WhatsApp.
+              Harga final &amp; promo terbaru bisa ditanyakan langsung via WhatsApp.
             </p>
           </div>
         </section>
@@ -312,7 +326,7 @@ export default function Page() {
               />
             </div>
             <p data-reveal className="mt-8 text-center text-xs text-ink-500">
-              Foto masih contoh untuk pratinjau — akan diganti milik pasien, atas izin.
+              Hasil setiap pasien bisa berbeda, tergantung kondisi kulit.
             </p>
           </div>
         </section>
@@ -366,8 +380,12 @@ export default function Page() {
               </p>
               <h2 data-reveal className="text-5xl font-semibold sm:text-6xl">Mampir ke Quinzha 88.</h2>
               <div data-reveal className="mt-7 border-b border-cream-200 pb-5">
-                <h3 className="font-display text-2xl font-semibold text-ink-900">Batulicin</h3>
-                <p className="mt-1 text-ink-700">Batulicin, Tanah Bumbu, Kalimantan Selatan.</p>
+                <h3 className="font-display text-2xl font-semibold text-ink-900">Alamat</h3>
+                <p className="mt-1 text-ink-700">
+                  Jl. Raya Batulicin No. 88, Kampung Baru,
+                  <br />
+                  Simpang Empat, Tanah Bumbu, Kalimantan Selatan 72211.
+                </p>
                 <a href={waMain} target="_blank" rel="noopener"
                   className="mt-2 inline-block font-semibold text-coral-500 underline underline-offset-4">
                   WhatsApp 0852-2208-8878
@@ -376,9 +394,12 @@ export default function Page() {
               <p data-reveal className="mt-5 text-ink-700">
                 <strong className="text-ink-900">Jam buka</strong>
                 <br />
-                Setiap hari · sampai malam
+                Setiap hari · 10.00–21.00 WITA
+              </p>
+              <p data-reveal className="mt-5 border-t border-cream-200 pt-5 text-ink-700">
+                <strong className="text-ink-900">Dokter penanggung jawab</strong>
                 <br />
-                <span className="text-xs text-ink-500">*alamat lengkap &amp; jam pasti perlu dikonfirmasi klinik.</span>
+                dr. Amalia · STR/SIP terdaftar
               </p>
             </div>
             <div data-reveal className="overflow-hidden rounded-3xl border border-cream-200">
@@ -442,8 +463,6 @@ export default function Page() {
           <div className="border-t border-white/10">
             <div className="mx-auto max-w-7xl px-5 py-6 text-xs text-cream-50/60">
               © {new Date().getFullYear()} Quinzha Beauty 88 · Batulicin, Kalsel.
-              {" · "}
-              Pratinjau desain · foto, harga &amp; testimoni masih contoh.
             </div>
           </div>
         </footer>

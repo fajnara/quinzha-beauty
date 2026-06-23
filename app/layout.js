@@ -20,11 +20,14 @@ export const metadata = {
   title: "Quinzha Beauty 88 — Klinik Kecantikan di Batulicin",
   description:
     "Quinzha Beauty Aesthetic 88, Batulicin. Hydra Facial, Skin Booster Korea, Tanam Benang, Filler Bibir — harga jujur, suasana baru yang nyaman.",
-  metadataBase: new URL("https://quinzha-beauty.example"),
+  metadataBase: new URL("https://quinzha-beauty.vercel.app"),
+  alternates: { canonical: "https://quinzha-beauty.vercel.app" },
   openGraph: {
     title: "Quinzha Beauty 88 — Glow-up jujur di Batulicin",
     description:
       "Treatment terkini, harga transparan, ruang klinik baru yang nyaman.",
+    url: "https://quinzha-beauty.vercel.app",
+    siteName: "Quinzha Beauty 88",
     type: "website",
     locale: "id_ID",
   },
