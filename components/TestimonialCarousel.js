@@ -99,9 +99,6 @@ export default function TestimonialCarousel({ items }) {
           </div>
         ))}
       </div>
-      <p className="mx-auto mt-8 max-w-3xl px-5 text-center text-xs text-ink-500">
-        Diputar tanpa suara — ketuk ikon suara untuk mendengar cerita mereka.
-      </p>
     </>
   );
 }

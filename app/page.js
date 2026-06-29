@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import BeforeAfter from "@/components/BeforeAfter";
 import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import HeroVideo from "@/components/HeroVideo";
 
 const NUM = "6285222088878";
 const wa = (t) => `https://wa.me/${NUM}?text=${encodeURIComponent(t)}`;
@@ -195,7 +196,12 @@ export default function Page() {
 
           <div data-reveal className="relative mx-auto mt-16 max-w-[88rem] px-5">
             <div className="overflow-hidden rounded-[2.5rem] border border-cream-200 shadow-2xl shadow-ink-900/10">
-              <img src="/treatment.jpg" alt="Suasana perawatan di ruang baru Quinzha Beauty" className="h-[58vh] min-h-[340px] w-full object-cover sm:h-[640px]" />
+              <HeroVideo
+                src="/hero.mp4"
+                poster="/hero-poster.webp"
+                label="Suasana perawatan di ruang Quinzha Beauty"
+                className="h-[58vh] min-h-[340px] w-full object-cover sm:h-[640px]"
+              />
             </div>
           </div>
         </section>
